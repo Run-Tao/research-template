@@ -34,6 +34,7 @@ ENV/
 
 # 测试 / 覆盖率
 .pytest_cache/
+pytest-cache-files-*/
 .coverage
 .coverage.*
 htmlcov/
@@ -75,6 +76,7 @@ Thumbs.db
 *.synctex.gz
 *.run.xml
 *.bcf
+*.xdv
 paper/*.pdf
 
 # ---------- 模型 / 检查点 ----------
