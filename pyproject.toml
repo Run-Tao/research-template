@@ -15,7 +15,7 @@ description = "科研项目模板：AI 项目 / 数学建模 / 课程项目 / �
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
-authors = [{ name = "<你的姓名 / 团队名称>" }]
+authors = [{ name = "Tao Li", email = "Taoli_Run@outlook.com" }]
 keywords = ["research", "template", "machine-learning", "latex", "experiment"]
 dependencies = [
     "numpy>=1.26",
