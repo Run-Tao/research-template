@@ -34,7 +34,7 @@ def load_config(path: str | Path | None = None) -> dict[str, Any]:
             f"配置文件不存在：{config_path}。"
             "可运行 `make setup` 后检查，或通过 --config 指定其他配置。"
         )
-    with open(config_path, "r", encoding="utf-8") as f:
+    with open(config_path, encoding="utf-8") as f:
         config = yaml.safe_load(f)
     if not isinstance(config, dict):
         raise ValueError(f"配置文件格式错误（应为 YAML 映射）：{config_path}")

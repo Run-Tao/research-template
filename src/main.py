@@ -9,10 +9,12 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from src.utils.config import load_config
-
 
 def main() -> None:
+    # 延迟导入：保证模块在任何环境下都可被导入（如 pip 构建时校验
+    # 入口脚本 `research = src.main:main`，此时运行时依赖尚未安装）。
+    from src.utils.config import load_config
+
     parser = argparse.ArgumentParser(description="科研项目主入口（训练/评估流水线）")
     parser.add_argument(
         "--config",

@@ -9,8 +9,6 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-import pandas as pd
-
 
 def make_dataset(raw_dir: Path, processed_dir: Path) -> Path | None:
     """将原始数据转换为处理后数据（raw -> processed 单向流水线）。
@@ -36,6 +34,7 @@ def make_dataset(raw_dir: Path, processed_dir: Path) -> Path | None:
     #   4. 保存到 processed_dir，并在 data/README.md 更新数据字典
     #
     # 示例代码：
+    #   import pandas as pd
     #   df = pd.read_csv(raw_dir / "raw.csv")
     #   df = df.dropna().drop_duplicates()
     #   out_path = processed_dir / "processed.parquet"
