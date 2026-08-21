@@ -1,0 +1,47 @@
+# ============================================================
+# 全局实验配置：所有参数集中管理，代码不写死参数
+#
+# 用法：
+#   1. 代码中通过 src/utils/config.py 加载本文件
+#   2. 开始新实验时，复制本文件为 experiments/<实验名>_config.yaml 再修改，
+#      并在实验记录中注明所用配置文件
+#   3. 修改任何参数前，先确认实验记录中说明了"为什么"
+# ============================================================
+
+# ---------- 数据路径（相对仓库根目录）----------
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  dataset: example_dataset   # 数据集名称（用于输出文件命名）
+
+# ---------- 随机种子（保证可复现）----------
+seed: 42
+
+# ---------- 数据划分 ----------
+split:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+# ---------- 模型 ----------
+model:
+  name: baseline_logistic   # 可选：logistic / mlp / cnn / transformer ...
+  hidden_sizes: [128, 64]
+  dropout: 0.3
+
+# ---------- 训练 ----------
+train:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 1e-3
+  weight_decay: 1e-5
+  optimizer: adam
+  scheduler: cosine
+  early_stopping_patience: 10
+
+# ---------- 实验输出 ----------
+output:
+  experiment_dir: experiments/results
+  log_dir: experiments/logs
+  save_model: true
+  save_plots: true

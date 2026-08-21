@@ -1,0 +1,23 @@
+# ============================================================
+# conda 完整环境定义（可复现性最强）
+# 创建环境：conda env create -f environment.yml
+# 更新环境：conda env update -f environment.yml
+# 导出当前环境：conda env export > environment.lock.yml
+#
+# 依赖以 requirements.txt 为单一事实来源，
+# 运行时 pip 会自动按该文件安装（路径相对于本文件）。
+# ============================================================
+name: research-template
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12          # 推荐 3.10~3.12（深度学习框架对最新 Python 支持滞后）
+  - pip
+  - pip:
+      - -r requirements.txt
+
+  # ---- 深度学习框架请按需在此追加（不要全部安装）----
+  # - torch
+  # - torchvision
+  # - transformers

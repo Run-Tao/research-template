@@ -1,0 +1,119 @@
+# ============================================================
+# 科研项目模板 .gitignore
+# 原则：代码入库，产物不入库（数据/模型/日志/缓存均不入 Git）
+# ============================================================
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# 测试 / 覆盖率
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+*.cover
+.hypothesis/
+
+# 类型检查 / Lint 缓存
+.mypy_cache/
+.pytype/
+.pyright/
+.ruff_cache/
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ---------- IDE / 系统 ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---------- LaTeX ----------
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.run.xml
+*.bcf
+paper/*.pdf
+
+# ---------- 模型 / 检查点 ----------
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+*.pb
+*.safetensors
+checkpoints/
+runs/
+lightning_logs/
+
+# ---------- 数据 ----------
+# 原始数据一律不入库（只保留 .gitkeep 与 data/README.md）
+data/raw/*
+!data/raw/.gitkeep
+
+# 大型/可再生的中间数据文件（如确有需要可提交，删除对应行即可）
+*.npy
+*.npz
+*.parquet
+*.feather
+*.h5ad
+
+# ---------- 实验产物 ----------
+# 训练日志（TensorBoard 等二进制事件文件）
+experiments/logs/*
+!experiments/logs/.gitkeep
+events.out.tfevents.*
+
+# 实验跟踪平台
+wandb/
+mlruns/
+
+# ---------- 密钥 / 本地配置 ----------
+.env
+.env.*
+*.local
+secrets/

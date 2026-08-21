@@ -1,0 +1,57 @@
+# ============================================================
+# 现代 Python 工程配置（打包 / Lint / 测试的统一入口）
+# 安装（可编辑模式，src 可直接 import）：
+#     pip install -e .
+# 安装开发工具：pip install -e ".[dev]"
+# ============================================================
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-template"
+version = "0.1.0"
+description = "科研项目模板：AI 项目 / 数学建模 / 课程项目 / 科研实验 / 论文写作"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "<你的姓名 / 团队名称>" }]
+keywords = ["research", "template", "machine-learning", "latex", "experiment"]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "PyYAML>=6.0",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+    "pre-commit>=3.7",
+]
+
+[project.scripts]
+research = "src.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"

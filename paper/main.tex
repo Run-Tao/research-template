@@ -1,0 +1,45 @@
+% ============================================================
+% 论文主文件（中文模板，需要 XeLaTeX 编译）
+%
+% 编译方法（推荐 latexmk）：
+%   latexmk -xelatex main.tex
+% 或手动编译：
+%   xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
+%
+% 章节按模块拆分在 sections/ 下，方便多人协作写作
+% ============================================================
+\documentclass[11pt]{ctexart}
+
+% ---------- 页面与排版 ----------
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}      % 插图
+\usepackage{booktabs}      % 三线表
+\usepackage{amsmath, amssymb}
+\usepackage[numbers, sort&compress]{natbib}  % 参考文献
+\usepackage[hidelinks]{hyperref}
+
+% 图片搜索路径（图片放在 figures/ 下）
+\graphicspath{{figures/}}
+
+% ---------- 标题信息 ----------
+\title{论文标题：项目名称}
+\author{作者一 \and 作者二}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+摘要：一段话说明问题、方法、结果与结论。
+\end{abstract}
+
+\input{sections/intro}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

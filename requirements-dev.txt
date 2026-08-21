@@ -1,0 +1,9 @@
+# ============================================================
+# 开发 / 质量工具依赖
+# 安装：pip install -r requirements-dev.txt
+# 或使用 pyproject.toml 的 dev extras：pip install -e ".[dev]"
+# ============================================================
+
+pytest>=8.0
+ruff>=0.4
+pre-commit>=3.7
