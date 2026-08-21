@@ -10,10 +10,8 @@
 > 一个面向 **AI 项目 / 数学建模竞赛 / 课程项目 / 科研实验 / 论文写作** 的
 > 长期维护型项目模板，模拟真实科研团队的工作流：代码、数据、实验、论文、协作一体化管理。
 
-<!-- 徽章占位：推到 GitHub 后取消注释并替换链接
-[![CI](https://github.com/<你的用户名>/<仓库名>/actions/workflows/ci.yml/badge.svg)](https://github.com/<你的用户名>/<仓库名>/actions/workflows/ci.yml)
+[![CI](https://github.com/Run-Tao/research-template/actions/workflows/ci.yml/badge.svg)](https://github.com/Run-Tao/research-template/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
--->
 
 ## 目录
 
@@ -307,4 +305,4 @@ make paper        # = latexmk -xelatex paper/main.tex
 
 ## 10. License
 
-本项目使用 [MIT License](LICENSE)。使用前请修改 LICENSE 中的版权信息为你的姓名/团队。
+本项目使用 [MIT License](LICENSE)（Copyright © 2025 Tao Li）。
