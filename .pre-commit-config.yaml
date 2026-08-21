@@ -1,0 +1,26 @@
+# ============================================================
+# pre-commit 钩子配置：每次 git commit 前自动检查代码质量
+#
+# 安装（一次性）：
+#   pip install -e ".[dev]"
+#   pre-commit install
+# 手动运行全部检查：
+#   pre-commit run --all-files
+# ============================================================
+repos:
+  # Python 代码规范（与 CI 中的 ruff 保持一致）
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  # 通用仓库卫生检查
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-added-large-files
